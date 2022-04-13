@@ -1,18 +1,18 @@
 import React from "react";
 import sinon, { SinonStub } from "sinon";
+// @ts-ignore
 import faker from "faker";
 import { render, cleanup } from "@testing-library/react";
 import { Button } from "../index";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider, Button as MuiButton } from "@mui/material";
 import { theme } from "../../../theme";
-import MuiButton from "@material-ui/core/Button";
 
 const sandbox = sinon.createSandbox();
 const {
   lorem: { word },
 } = faker;
 
-describe("Button Unit Tests", () => {
+describe("button Unit Tests", () => {
   afterEach(() => {
     sandbox.verifyAndRestore();
     cleanup();
